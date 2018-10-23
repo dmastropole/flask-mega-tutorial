@@ -1,0 +1,6 @@
+# Compiled code
+*.pyc
+
+# Environments
+/microblog
+.flaskenv
