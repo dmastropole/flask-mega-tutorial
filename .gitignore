@@ -7,3 +7,6 @@
 
 # Config
 config.py
+
+# Database
+app.db
