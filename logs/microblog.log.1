@@ -1,0 +1,112 @@
+2018-11-14 22:46:20,781 INFO: Microblog startup [in /Users/Dana/Documents/CleanerShrimps/tutorials/microblog/app/__init__.py:40]
+2018-11-14 22:46:24,063 INFO: Microblog startup [in /Users/Dana/Documents/CleanerShrimps/tutorials/microblog/app/__init__.py:40]
+2018-11-14 22:46:43,692 ERROR: Exception on /edit_profile [POST] [in /Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/Dana/Documents/CleanerShrimps/tutorials/microblog/app/routes.py", line 85, in edit_profile
+    db.session.commit()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 943, in commit
+    self.transaction.commit()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 467, in commit
+    self._prepare_impl()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 447, in _prepare_impl
+    self.session.flush()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2254, in flush
+    self._flush(objects)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2381, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2345, in _flush
+    flush_context.execute()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 395, in execute
+    rec.execute(self)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 560, in execute
+    uow
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 177, in save_obj
+    mapper, table, update)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 768, in _emit_update_statements
+    execute(statement, multiparams)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: u'UPDATE user SET username=?, about_me=? WHERE user.id = ?'] [parameters: (u'dana', u'I like cats!', 1)] (Background on this error at: http://sqlalche.me/e/gkpj)
+2018-11-14 22:55:50,567 INFO: Microblog startup [in /Users/Dana/Documents/CleanerShrimps/tutorials/microblog/app/__init__.py:40]
+2018-11-14 22:56:55,166 INFO: Microblog startup [in /Users/Dana/Documents/CleanerShrimps/tutorials/microblog/app/__init__.py:40]
+2018-11-14 22:57:02,698 ERROR: Exception on /edit_profile [GET] [in /Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/Dana/Documents/CleanerShrimps/tutorials/microblog/app/routes.py", line 81, in edit_profile
+    form = EditProfileForm()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+TypeError: __init__() takes at least 2 arguments (1 given)
+2018-11-14 22:57:11,734 ERROR: Exception on /edit_profile [GET] [in /Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/Dana/Documents/CleanerShrimps/tutorials/microblog/app/routes.py", line 81, in edit_profile
+    form = EditProfileForm()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+TypeError: __init__() takes at least 2 arguments (1 given)
+2018-11-14 23:00:17,111 INFO: Microblog startup [in /Users/Dana/Documents/CleanerShrimps/tutorials/microblog/app/__init__.py:40]
+2018-11-14 23:00:34,973 ERROR: Exception on /edit_profile [POST] [in /Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/Dana/miniconda2/envs/microblog/lib/python2.7/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2018-11-14 23:04:15,031 INFO: Microblog startup [in /Users/Dana/Documents/CleanerShrimps/tutorials/microblog/app/__init__.py:40]
